@@ -1,4 +1,4 @@
-namespace Features.Blackbox
+namespace Features.Blackbox.Core
 {
     public interface IBlackboxElement
     {

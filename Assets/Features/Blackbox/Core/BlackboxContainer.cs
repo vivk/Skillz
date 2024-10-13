@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Features.Blackbox
+namespace Features.Blackbox.Core
 {
     public class BlackboxContainer : MonoBehaviour, IBlackboxContainer
     {
@@ -9,14 +9,14 @@ namespace Features.Blackbox
         
         public List<IBlackboxContainer> Dependencies { get; } = new();
 
-        public IBlackboxElement GetElement<T>(int id = 0) where T : ABlackboxElement
+        public T GetElement<T>(int id = 0) where T : ABlackboxElement
         {
             for (var i = 0; i < Elements.Length; i++)
             {
                 var element = Elements[i];
                 if (element.ID == id && element.EqualType<T>())
                 {
-                    return element;
+                    return element as T;
                 }
             }
             

@@ -1,13 +1,13 @@
 using UnityEngine;
 
-namespace Features.Blackbox
+namespace Features.Blackbox.Core
 {
     public class ABlackboxElement : MonoBehaviour, IBlackboxElement
     {
-        [Header("Blackbox Element")]
-        [SerializeField] private int _id;
+        [SerializeField] 
+        private int id;
         
-        public int ID => _id;
+        public int ID => id;
         
         public bool EqualType<T>() where T : IBlackboxElement
         {
