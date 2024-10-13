@@ -1,0 +1,57 @@
+# .gitignore
+
+# Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/Assets/AssetStoreTools*
+/UserSettings/
+/Assets/Dependencies/PlayMaker/Editor/Resources/EditorStartupPrefs.asset
+sysinfo.txt
+*.pidb.meta
+
+# VS/Rider/MD/Consulo
+ExportedObj/
+.consulo/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+#VSCode
+.vscode/
+
+# Builds
+*.apk
+*.unitypackage
+*.unitypackage.meta
+*.app
+*.exe
+/*.obb
+/Assets/StreamingAssets/build_info.txt
+/Assets/StreamingAssets*
+/Assets/Dependencies/UnityEngine.AssetGraph/Cache*
+/Assets/Plugins/Editor/JetBrains*
+/ProjectSettings/RiderScriptEditorPersistedState.asset
+
+# Cinamchine has this
+!*LegacyTimelineAPI.unitypackage
+/Assets/Dependencies/UnityEngine.AssetGraph/Editor/SettingTemplate/setting.m4v.meta
+.vs
+
+# OSX stuff
+*.DS_Store
+/Assets/Hierarchy 2
+
+# Memory Profiler Snapshots Dumps
+/[Mm]emoryCaptures/
