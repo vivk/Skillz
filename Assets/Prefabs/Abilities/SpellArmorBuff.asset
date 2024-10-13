@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e761e3500b0f0d4fb6ac549828e08fa, type: 3}
+  m_Name: SpellArmorBuff
+  m_EditorClassIdentifier: 
+  Spell:
+    Cooldown: 8
+    Components:
+    - rid: 1092172699029733384
+    - rid: 1092172699029733385
+    - rid: 1092172699029733386
+    - rid: 1092172699029733467
+  references:
+    version: 2
+    RefIds:
+    - rid: 1092172699029733384
+      type: {class: CastStatsModifier, ns: Features.Actors.Components, asm: Actors.Components}
+      data:
+        Type: 0
+        Duration: 4
+        Value: 5
+    - rid: 1092172699029733385
+      type: {class: CastParticlePlayer, ns: Features.Actors.Components, asm: Actors.Components}
+      data:
+        ID: 1
+        Duration: 4
+    - rid: 1092172699029733386
+      type: {class: CastAudioPlayer, ns: Features.Actors.Components, asm: Actors.Components}
+      data:
+        Clips:
+        - {fileID: 8300000, guid: bd24b1dfbcc35bd4fbdfca5eced2fb73, type: 3}
+    - rid: 1092172699029733467
+      type: {class: CastAnimationPlayer, ns: Features.Actors.Components, asm: Actors.Components}
+      data:
+        AnimationName: ABuff1
