@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e761e3500b0f0d4fb6ac549828e08fa, type: 3}
+  m_Name: SpellDodge
+  m_EditorClassIdentifier: 
+  Spell:
+    Cooldown: 2.35
+    Components:
+    - rid: 1092172699029733376
+    - rid: 1092172699029733382
+    - rid: 1092172699029733383
+  references:
+    version: 2
+    RefIds:
+    - rid: 1092172699029733376
+      type: {class: CastAnimationPlayer, ns: Features.Actors.Components, asm: Actors.Components}
+      data:
+        AnimationName: ADodge
+    - rid: 1092172699029733382
+      type: {class: CastAudioPlayer, ns: Features.Actors.Components, asm: Actors.Components}
+      data:
+        Clips:
+        - {fileID: 8300000, guid: cd4c36561efd65a4585014fbb3e39719, type: 3}
+    - rid: 1092172699029733383
+      type: {class: CastMoveLookDirection, ns: Features.Actors.Components, asm: Actors.Components}
+      data:
+        MoveSpeed: 900
+        Duration: 0.35
+        ReverseDirection: 0
