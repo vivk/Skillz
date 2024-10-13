@@ -1,0 +1,17 @@
+{
+    "name": "Actors.Dependencies",
+    "rootNamespace": "",
+    "references": [
+        "GUID:83f34e41fd7c71e4abff0ba0b5d4eb71",
+        "GUID:3142351a744ebff42a24263214ddf3b5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
