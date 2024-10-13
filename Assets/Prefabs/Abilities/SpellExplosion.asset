@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e761e3500b0f0d4fb6ac549828e08fa, type: 3}
+  m_Name: SpellExplosion
+  m_EditorClassIdentifier: 
+  Spell:
+    Cooldown: 2.5
+    Components:
+    - rid: 1092172699029733390
+    - rid: 1092172699029733391
+    - rid: 1092172699029733392
+    - rid: 1092172699029733450
+    - rid: 1092172699029733457
+  references:
+    version: 2
+    RefIds:
+    - rid: 1092172699029733390
+      type: {class: CastAreaDamageDealer, ns: Features.Actors.Components, asm: Actors.Components}
+      data:
+        Damage: 15
+        Radius: 3
+        Offset: {x: 0, y: 1, z: 0}
+        Mask:
+          serializedVersion: 2
+          m_Bits: 1024
+    - rid: 1092172699029733391
+      type: {class: CastParticlePlayer, ns: Features.Actors.Components, asm: Actors.Components}
+      data:
+        ID: 0
+        Duration: 1
+    - rid: 1092172699029733392
+      type: {class: CastAudioPlayer, ns: Features.Actors.Components, asm: Actors.Components}
+      data:
+        Clips:
+        - {fileID: 8300000, guid: 0fc1a45ab5cdb9341880df325154e53e, type: 3}
+    - rid: 1092172699029733450
+      type: {class: CastAnimationPlayer, ns: Features.Actors.Components, asm: Actors.Components}
+      data:
+        AnimationName: AAttack1
+    - rid: 1092172699029733457
+      type: {class: CastMoveLookDirection, ns: Features.Actors.Components, asm: Actors.Components}
+      data:
+        MoveSpeed: 0
+        Duration: 0.575
+        ReverseDirection: 0
