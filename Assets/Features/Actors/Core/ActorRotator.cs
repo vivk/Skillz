@@ -1,9 +1,8 @@
 using Features.Actors.Dependencies;
-using Features.Blackbox;
 using Features.Blackbox.Core;
 using UnityEngine;
 
-namespace Features.Actors
+namespace Features.Actors.Core
 {
     public class ActorRotator : MonoBehaviour
     {

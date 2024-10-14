@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Features.Camera
+namespace Features.Cameras.Core
 {
     public class CameraActor : MonoBehaviour
     {

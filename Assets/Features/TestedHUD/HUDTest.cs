@@ -1,10 +1,10 @@
 using Features.Actors.Dependencies;
-using Features.Blackbox;
 using Features.Blackbox.Core;
+using Features.Health.Core;
 using TMPro;
 using UnityEngine;
 
-namespace Features.Health.Test
+namespace Features.TestedHUD
 {
     public class HUDTest : MonoBehaviour
     {

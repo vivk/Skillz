@@ -1,10 +1,8 @@
-using Features.Abilities;
 using Features.Abilities.Core;
-using Features.Blackbox;
 using Features.Blackbox.Core;
 using UnityEngine;
 
-namespace Features.Actors
+namespace Features.Actors.Core
 {
     public class ActorCaster : MonoBehaviour
     {
