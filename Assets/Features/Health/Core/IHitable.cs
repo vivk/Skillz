@@ -1,7 +1,10 @@
-namespace Features.Health
+using Features.Health.Statuses;
+
+namespace Features.Health.Core
 {
     public interface IHitable
     {
-        void Hit(int damage);
+        void Hit(HitableType type, int damage);
+        void SetStatus(StatusType type, byte level);
     }
 }

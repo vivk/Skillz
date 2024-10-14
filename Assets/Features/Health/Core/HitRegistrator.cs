@@ -1,10 +1,10 @@
 using System;
 using Features.Actors.Dependencies;
-using Features.Blackbox;
 using Features.Blackbox.Core;
+using Features.Health.Statuses;
 using UnityEngine;
 
-namespace Features.Health
+namespace Features.Health.Core
 {
     public class HitRegistrator : MonoBehaviour, IHitable
     {
@@ -25,6 +25,8 @@ namespace Features.Health
         public int FullHealth => fullHealth;
         public int CurrentHealth => _currentHealth;
         
+        public Action<StatusType, byte> OnStatusSet;
+        
         private void ResetHealth()
         {
             _currentHealth = fullHealth;
@@ -44,21 +46,42 @@ namespace Features.Health
             HitableContainer.Unsubscribe(_transform);
         }
 
-        public void Hit(int damage)
+        public void Hit(HitableType type, int damage)
         {
-            var armor = _actorStatsDependency.Armor.Value;
-            damage = damage - armor;
-            damage = damage < 1 ? 1 : damage;
-            
-            _currentHealth = _currentHealth - damage;
-
-            if (_currentHealth > 0)
+            switch (type)
             {
-                return;
+                case HitableType.None:
+                    return;
+                case HitableType.Pure:
+                    break;
+                case HitableType.Physical:
+                    var armor = _actorStatsDependency.Armor.Value;
+                    damage -= armor;
+                    damage = Mathf.Clamp(damage, 1, damage);
+                    break;
+                default:
+                    Debug.LogError($"Hitable type {type} is not implemented", this);
+                    return;
             }
             
-            Debug.Log("Dead");
-                
+            _currentHealth -= damage;
+
+            if (_currentHealth <= 0)
+            {
+                SetDead();
+                return;
+            }
+        }
+
+        public void SetStatus(StatusType type, byte level)
+        {
+            OnStatusSet?.Invoke(type, level);
+        }
+        
+        private void SetDead()
+        {
+            Debug.Log("Dead", this);
+
             ResetHealth();
         }
     }

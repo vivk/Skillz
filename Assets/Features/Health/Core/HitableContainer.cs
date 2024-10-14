@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Features.Health
+namespace Features.Health.Core
 {
     public static class HitableContainer
     {

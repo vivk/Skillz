@@ -1,10 +1,9 @@
 using System;
-using Features.Abilities;
 using Features.Abilities.Core;
 using Features.Actors.Dependencies;
-using Features.Blackbox;
 using Features.Blackbox.Core;
-using Features.Health;
+using Features.Health.Core;
+using Features.Health.Statuses;
 using UnityEngine;
 
 namespace Features.Actors.Components
@@ -13,6 +12,11 @@ namespace Features.Actors.Components
     public class CastAreaDamageDealer : IComponent
     {
         public int Damage;
+        public HitableType Type;
+        
+        [Space]
+        public StatusType StatusType;
+        public byte StatusLevel;
         
         [Space]
         public float Radius;
@@ -46,7 +50,8 @@ namespace Features.Actors.Components
                 {
                     continue;
                 }
-                hitable.Hit(Damage);
+                hitable.Hit(Type, Damage);
+                hitable.SetStatus(StatusType, StatusLevel);
             }
         }
 
@@ -60,6 +65,9 @@ namespace Features.Actors.Components
             return new CastAreaDamageDealer
             {
                 Damage = Damage,
+                Type = Type,
+                StatusType = StatusType,
+                StatusLevel = StatusLevel,
                 Radius = Radius,
                 Offset = Offset,
                 Mask = Mask
